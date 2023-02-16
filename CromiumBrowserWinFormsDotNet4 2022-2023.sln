@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CromiumBrowserWinFormsDotNet4 2022-2023", "CromiumBrowserWinFormsDotNet4 2022-2023.csproj", "{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Debug|x64.ActiveCfg = Debug|x64
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Debug|x64.Build.0 = Debug|x64
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Release|x64.ActiveCfg = Release|x64
+		{E9EBEDD2-B270-4ECD-AC6C-54F0A642F025}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0ACA3DF8-A9FF-48D9-9528-7169F11F92E5}
+	EndGlobalSection
+EndGlobal
