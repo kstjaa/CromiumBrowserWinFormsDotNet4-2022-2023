@@ -13,9 +13,12 @@ using System.Windows.Forms;
 
 namespace CromiumBrowserWinFormsDotNet4_2022_2023
 {
-    public partial class Form1 : Form
+    public partial class Browser : Form
     {
-        public Form1()
+        ChromiumWebBrowser chromiumBrowser = null;
+        List<ChromiumWebBrowser> chromiumBrowsers = new List<ChromiumWebBrowser>();
+
+        public Browser()
         {
             InitializeComponent();
             InitializeBrowswer();
@@ -25,12 +28,58 @@ namespace CromiumBrowserWinFormsDotNet4_2022_2023
         {
             var settings = new CefSettings();
             Cef.Initialize(settings);
-            Browser.Load("https://google.com");
+
+            chromiumBrowser = new ChromiumWebBrowser("https://google.com");
+            BrowserTabs.TabPages[0].Controls.Add(chromiumBrowser);            
+            chromiumBrowser.Dock = DockStyle.Fill;
+
+            chromiumBrowser = new ChromiumWebBrowser("https://google.com");
+            BrowserTabs.TabPages[1].Controls.Add(chromiumBrowser);
+            chromiumBrowser.Dock = DockStyle.Fill;
         }
 
         private void Go_Click(object sender, EventArgs e)
         {
-            Browser.Load(Address.Text);
+            //Browser.Load(Address.Text);
+        }
+
+        private void addBrowserTab_Click(object sender, EventArgs e)
+        {
+            AddBrowserTab();
+        }
+
+        private void AddBrowserTab()
+        {
+            TabPage tabPage = new TabPage();
+            tabPage.Text = "Browser page";
+
+            chromiumBrowser = new ChromiumWebBrowser("https://google.com");
+            tabPage.Controls.Add(chromiumBrowser);
+            chromiumBrowser.Dock = DockStyle.Fill;
+
+            BrowserTabs.TabPages.Add(tabPage);
+        }
+
+        private void removeBrowserTab_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (BrowserTabs.TabCount > 1)
+                {
+                    BrowserTabs.TabPages.Remove(BrowserTabs.SelectedTab);
+                }
+                else
+                {
+                    BrowserTabs.TabPages.Remove(BrowserTabs.SelectedTab);
+                    AddBrowserTab();
+                }
+                
+                    
+            }
+            catch (Exception)
+            {
+                
+            }            
         }
     }
 }

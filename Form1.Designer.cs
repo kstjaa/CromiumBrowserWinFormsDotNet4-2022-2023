@@ -1,6 +1,6 @@
 ﻿namespace CromiumBrowserWinFormsDotNet4_2022_2023
 {
-    partial class Form1
+    partial class Browser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
-            this.Browser = new CefSharp.WinForms.ChromiumWebBrowser();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Browser));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Go = new System.Windows.Forms.ToolStripButton();
             this.Address = new System.Windows.Forms.ToolStripTextBox();
+            this.BrowserTabs = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.addBrowserTab = new System.Windows.Forms.ToolStripButton();
+            this.removeBrowserTab = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
+            this.BrowserTabs.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // chromiumWebBrowser1
-            // 
-            this.chromiumWebBrowser1.ActivateBrowserOnCreation = false;
-            this.chromiumWebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumWebBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(1191, 593);
-            this.chromiumWebBrowser1.TabIndex = 0;
-            // 
-            // Browser
-            // 
-            this.Browser.ActivateBrowserOnCreation = false;
-            this.Browser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Browser.Location = new System.Drawing.Point(0, 0);
-            this.Browser.Name = "Browser";
-            this.Browser.Size = new System.Drawing.Size(1191, 593);
-            this.Browser.TabIndex = 1;
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Go,
-            this.Address});
+            this.Address,
+            this.addBrowserTab,
+            this.removeBrowserTab});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1191, 50);
@@ -83,30 +71,86 @@
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(119, 33);
             // 
-            // Form1
+            // BrowserTabs
+            // 
+            this.BrowserTabs.Controls.Add(this.tabPage1);
+            this.BrowserTabs.Controls.Add(this.tabPage2);
+            this.BrowserTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BrowserTabs.Location = new System.Drawing.Point(0, 50);
+            this.BrowserTabs.Name = "BrowserTabs";
+            this.BrowserTabs.SelectedIndex = 0;
+            this.BrowserTabs.Size = new System.Drawing.Size(1191, 543);
+            this.BrowserTabs.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1183, 517);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(509, 261);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // addBrowserTab
+            // 
+            this.addBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.addBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.addBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("addBrowserTab.Image")));
+            this.addBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBrowserTab.Name = "addBrowserTab";
+            this.addBrowserTab.Size = new System.Drawing.Size(29, 30);
+            this.addBrowserTab.Text = "+";
+            this.addBrowserTab.Click += new System.EventHandler(this.addBrowserTab_Click);
+            // 
+            // removeBrowserTab
+            // 
+            this.removeBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.removeBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.removeBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("removeBrowserTab.Image")));
+            this.removeBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeBrowserTab.Name = "removeBrowserTab";
+            this.removeBrowserTab.Size = new System.Drawing.Size(24, 30);
+            this.removeBrowserTab.Text = "-";
+            this.removeBrowserTab.Click += new System.EventHandler(this.removeBrowserTab_Click);
+            // 
+            // Browser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 593);
+            this.Controls.Add(this.BrowserTabs);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.Browser);
-            this.Controls.Add(this.chromiumWebBrowser1);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Browser";
             this.Text = "Elchin\'s browser";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.BrowserTabs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
-        private CefSharp.WinForms.ChromiumWebBrowser Browser;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Go;
         private System.Windows.Forms.ToolStripTextBox Address;
+        private System.Windows.Forms.TabControl BrowserTabs;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ToolStripButton addBrowserTab;
+        private System.Windows.Forms.ToolStripButton removeBrowserTab;
     }
 }
 
