@@ -79,7 +79,14 @@ namespace CromiumBrowserWinFormsDotNet4_2022_2023
             catch (Exception)
             {
                 
-            }            
+            }   
+            
+
+        }
+
+        private void Kostja()
+        {
+            //some actions here
         }
     }
 }
