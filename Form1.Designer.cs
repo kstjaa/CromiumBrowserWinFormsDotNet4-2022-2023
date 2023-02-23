@@ -32,11 +32,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Go = new System.Windows.Forms.ToolStripButton();
             this.Address = new System.Windows.Forms.ToolStripTextBox();
+            this.addBrowserTab = new System.Windows.Forms.ToolStripButton();
+            this.removeBrowserTab = new System.Windows.Forms.ToolStripButton();
             this.BrowserTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.addBrowserTab = new System.Windows.Forms.ToolStripButton();
-            this.removeBrowserTab = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStrip1.SuspendLayout();
             this.BrowserTabs.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +51,10 @@
             this.Go,
             this.Address,
             this.addBrowserTab,
-            this.removeBrowserTab});
+            this.removeBrowserTab,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripProgressBar1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1191, 50);
@@ -69,7 +75,29 @@
             // 
             this.Address.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(119, 33);
+            this.Address.Size = new System.Drawing.Size(119, 50);
+            // 
+            // addBrowserTab
+            // 
+            this.addBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.addBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.addBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("addBrowserTab.Image")));
+            this.addBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBrowserTab.Name = "addBrowserTab";
+            this.addBrowserTab.Size = new System.Drawing.Size(29, 47);
+            this.addBrowserTab.Text = "+";
+            this.addBrowserTab.Click += new System.EventHandler(this.addBrowserTab_Click);
+            // 
+            // removeBrowserTab
+            // 
+            this.removeBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.removeBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.removeBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("removeBrowserTab.Image")));
+            this.removeBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeBrowserTab.Name = "removeBrowserTab";
+            this.removeBrowserTab.Size = new System.Drawing.Size(24, 47);
+            this.removeBrowserTab.Text = "-";
+            this.removeBrowserTab.Click += new System.EventHandler(this.removeBrowserTab_Click);
             // 
             // BrowserTabs
             // 
@@ -97,32 +125,33 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(509, 261);
+            this.tabPage2.Size = new System.Drawing.Size(1183, 517);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // addBrowserTab
+            // toolStripButton1
             // 
-            this.addBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.addBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.addBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("addBrowserTab.Image")));
-            this.addBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addBrowserTab.Name = "addBrowserTab";
-            this.addBrowserTab.Size = new System.Drawing.Size(29, 30);
-            this.addBrowserTab.Text = "+";
-            this.addBrowserTab.Click += new System.EventHandler(this.addBrowserTab_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 47);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // removeBrowserTab
+            // toolStripButton2
             // 
-            this.removeBrowserTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.removeBrowserTab.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.removeBrowserTab.Image = ((System.Drawing.Image)(resources.GetObject("removeBrowserTab.Image")));
-            this.removeBrowserTab.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.removeBrowserTab.Name = "removeBrowserTab";
-            this.removeBrowserTab.Size = new System.Drawing.Size(24, 30);
-            this.removeBrowserTab.Text = "-";
-            this.removeBrowserTab.Click += new System.EventHandler(this.removeBrowserTab_Click);
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(28, 47);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 47);
             // 
             // Browser
             // 
@@ -151,6 +180,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripButton addBrowserTab;
         private System.Windows.Forms.ToolStripButton removeBrowserTab;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 
